@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registered Vehicles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f4f8;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #111;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+            padding: 14px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        td {
+            padding: 14px;
+            text-align: center;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Registered Vehicles</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Vehicle ID</th>
+                <th>Owner Name</th>
+                <th>Vehicle Type</th>
+                <th>License Number</th>
+                <th>Public Key</th>
+                <th>Trust Status</th>
+                <th>Trust Score</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for vehicle in vehicles %}
+            <tr>
+                <td>{{ vehicle[0] }}</td>
+                <td>{{ vehicle[1] }}</td>
+                <td>{{ vehicle[2] }}</td>
+                <td>{{ vehicle[3] }}</td>
+                <td>{{ vehicle[4] }}</td>
+                <td>{{ vehicle[5] }}</td>
+                <td>{{ vehicle[6] }}</td>
+                <td>{{ vehicle[7] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

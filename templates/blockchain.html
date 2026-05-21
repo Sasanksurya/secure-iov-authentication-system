@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blockchain Visualization</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f9;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .block {
+            background: white;
+            border-left: 6px solid #007bff;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .hash {
+            word-wrap: break-word;
+            color: #444;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Blockchain Authentication Chain</h1>
+
+{% for block in blocks %}
+<div class="block">
+    <h2>Block {{ block.block_number }}</h2>
+    <p><strong>Vehicle ID:</strong> {{ block.vehicle_id }}</p>
+    <p><strong>Timestamp:</strong> {{ block.timestamp }}</p>
+    <p><strong>Status:</strong> {{ block.status }}</p>
+    <p class="hash"><strong>Previous Hash:</strong> {{ block.previous_hash }}</p>
+    <p class="hash"><strong>Current Hash:</strong> {{ block.current_hash }}</p>
+</div>
+{% endfor %}
+
+</body>
+</html>
